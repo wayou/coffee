@@ -91,8 +91,15 @@ function init() {
         if (index > -1) {
             //从总数中羞减去
             var tempOrder = order.data[index];
-            order.totalCount = order.totalCount - tempOrder.small - tempOrder.middle - tempOrder.big;
-            order.totalBill = order.totalBill - tempOrder.small * tempOrder.smallPrice - tempOrder.middle * tempOrder.middlePrice - tempOrder.big * tempOrder.bigPrice;
+            var countToBeRemove = 0;
+            var moneyToBeRemove = 0;
+            tempOrder.counts.forEach(function(v, i) {
+                countToBeRemove += v.count;
+                moneyToBeRemove += v.price * v.count;
+            });
+            order.totalCount = order.totalCount - countToBeRemove;
+
+            order.totalBill = order.totalBill - moneyToBeRemove;
 
             order.data.splice(index, 1);
 
@@ -113,7 +120,8 @@ function init() {
             id = $container.data('id'),
             name = $container.find('.good-title').html(),
             type = $(this).data('type'),
-            price = $(this).data('price');
+            price = $(this).data('price'),
+            sinleOrder;
 
         //添加到订单
         order.totalCount += 1;
@@ -122,49 +130,48 @@ function init() {
         //id为一个产品唯一标识，先去找是否已经添加过该商品，如果找到，更新其信息，如果未找到，添加到订单
         var index = getIndexById(id);
         if (index > -1) {
-            order.data[index][type] += 1;
+            sinleOrder = order.data[index];
+            order.data[index].counts.forEach(function(v, i) {
+                if (v.type == type) {
+                    v.count += 1;
+                }
+            });
             $priceContainer.find('.' + type).show().find('span').html(order.data[index][type]);
         } else {
 
             var tempOrder = {
                 id: id,
                 name: name,
-                small: 0,
-                smallPrice: 0,
-                middle: 0,
-                middlePrice: 0,
-                big: 0,
-                bigPrice: 0
+                counts: []
             };
 
             //保存单价信息
             $(this).parents('.list-op').find('.btn.price').each(function() {
-                var type = $(this).data('type');
-                tempOrder[type + 'Price'] = $(this).data('price');
+                tempOrder.counts.push({
+                    type: $(this).data('type'),
+                    count: type == $(this).data('type') ? 1 : 0,
+                    price: $(this).data('price')
+                });
             });
 
-            switch (type) {
-                case 'small':
-                    tempOrder.small = 1;
-                    $priceContainer.find('.small').show().find('span').html(1);
-                    break;
-                case 'middle':
-                    tempOrder.middle = 1;
-                    $priceContainer.find('.middle').show().find('span').html(1);
-                    break;
-                case 'big':
-                    tempOrder.big = 1;
-                    $priceContainer.find('.big').show().find('span').html(1);
-                    break;
-            }
-
             order.data.push(tempOrder);
+
+            sinleOrder = tempOrder;
 
         }
 
         //显示到页面
         $('#count').html(order.totalCount);
         $('#money').html(order.totalBill);
+
+        //显示选择的商品
+        var result = '';
+        sinleOrder.counts.forEach(function(v, i) {
+            if (v.count != 0) {
+                result += v.type + '<span>' + v.count + '</span>';
+            }
+        });
+        $priceContainer.find('.order-count').html(result).show();
 
         //显示删除按钮
         $(this).parents('.list-op').find('.btn.remove').show();
@@ -180,14 +187,26 @@ function init() {
         $('#bill-list').find('.item-row').remove();
         var tableContent = '';
         order.data.forEach(function(v, i) {
+            var orderDetail = '';
+            var orderMoney = 0;
+            v.counts.forEach(function(v2, i2) {
+                if (v2.count != 0) {
+                    orderMoney += v2.count * v2.price;
+                    orderDetail += v2.type + '<span class="money">' + v2.count + '</span>';
+                }
+            });
+
             tableContent += '<tr class="item-row">' +
                 '<td>' + v.name + '</td>' +
-                '<td>小 <span class="money">' + v.small + '</span> 中 <span class="money">' + v.middle + '</span> 大 <span class="money">' + v.big + '</span> </td>' +
-                '<td><span class="money">￥' + (v.small * v.smallPrice + v.middle * v.middlePrice + v.big * v.bigPrice) + '</span></td>' +
+                '<td>' + orderDetail + '</td>' +
+                '<td><span class="money">￥' + orderMoney + '</span></td>' +
                 '</tr>';
         });
         $(tableContent).insertBefore($('#bill-list .money-row'));
         $('#bill-sum').html('￥' + order.totalBill);
+
+        $('#money2').html(order.totalBill);
+
     });
 
     //返回
@@ -213,6 +232,16 @@ function init() {
 }
 
 function getIndexById(id) {
+    var index = -1;
+    order.data.forEach(function(v, i) {
+        if (v.id == id) {
+            index = i;
+        }
+    });
+    return index;
+}
+
+function getCountByType(sinleOrder, type) {
     var index = -1;
     order.data.forEach(function(v, i) {
         if (v.id == id) {
