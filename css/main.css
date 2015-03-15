@@ -1,0 +1,142 @@
+body {
+    font-family: 'Microsoft Yahei';
+    color: #50352D;
+}
+#checkout-navbar,#checkout-view{
+    display: none;
+}
+
+.main-wraper, .sidebar>.table-view {
+    background-color: #EEE1D7;
+}
+.banner {
+    height: 150px;
+    background-size: cover;
+    background-image: url(../img/banner.jpg);
+}
+.sidebar {
+    width: 100px;
+    float: left;
+    margin-top: 34px;
+}
+.sidebar li {
+    padding: 10px;
+}
+.sidebar .table-view-cell>a:not(.btn) {
+    margin-right: -10px;
+}
+.list {
+    /*position: absolute;
+    top: 0;
+    left: 100px;*/
+    margin-left: 100px;
+}
+.table-view-cell.media.active {
+    color: #EC7D42;
+    background-color: #fff;
+}
+.btn{
+    border-radius: 0;
+}
+.btn.price {
+    color: #fff;
+    float: right;
+    background-color: #EB712F;
+    font-size: 1.1em;
+    padding:8px;
+}
+.btn.remove {
+    margin-top: 7px;
+    color: #fff;
+    background-color: #B24318;
+    font-weight: bolder;
+    display: none;
+}
+.list .table-view-cell.media {
+    padding: 10px 0 0 10px;
+}
+
+.list li.table-view-cell.media:nth-child(odd) {
+    background-color: #FAF7F4;
+}
+
+.list-op{
+    margin-top: 15px;
+}
+.order{
+    display: inline-block;
+    margin-right: 5px;
+}
+.order-count>span,.money{
+    color: #EB712F!important;
+}
+
+.order-count{
+    display: none;
+}
+
+.list-head{
+    text-align: right;
+}
+.good-title{
+    float: left;
+}
+
+.tab-item.checkout{
+    background-color:#6BBF11;
+    color:#fff;
+}
+.bar.bar-tab a{
+    font-weight: bold;
+}
+.total-count {
+    color: #000!important;
+}
+.tab-item.back{
+    background-color: #F4A759;
+    color:#fff; 
+}
+
+#checkout,#back{
+    color:#fff;
+}
+
+.section-title{
+    padding: 10px;
+}
+
+.bill-list{
+    background-color: #fff;
+    padding: 10px;
+}
+
+#bill-list{
+    width: 100%;
+}
+#bill-list td{
+    padding:10px 0;
+}
+
+.money-row{
+    border-top:1px solid #EAD9C7;
+}
+.money-row .bill-sum{
+    font-size: 1.5em;
+}
+
+.input-row select {
+  width: 30%;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+  /*border: none;*/
+  background-color: #fff;
+  height: 100%;
+  border-radius: 0;
+}
+
+.table-view-divider{
+   background-color: #FBF7F4;
+   border-bottom: 1px solid #F0E8DE;
+}
+

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>下午茶</title>
+        <!-- Sets initial viewport load and disables zooming  -->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+        <meta name="apple-mobile-web-app-title" content="下午茶">
+        <!-- Include the compiled Ratchet CSS -->
+        <link href="lib/ratchet/css/ratchet.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="bar bar-tab" id="index-navbar">
+            <a class="tab-item total-count" href="#">
+            <span id="count">0</span> 份
+            </a>
+            <a class="tab-item money" href="#">
+            ￥<span id="money">0</span>
+            </a>
+            <!-- <a class="tab-item checkout" href="checkout.html" data-transition="slide-in" data-ignore="push"> -->
+            <a class="tab-item checkout" href="#"  data-ignore="push" id="checkout">
+            选好了
+            </a>
+        </nav>
+        <nav class="bar bar-tab" id="checkout-navbar">
+            <!-- <a class="tab-item back" href="index.html" data-transition="slide-out" data-ignore="push"> -->
+            <a class="tab-item back" href="#"  data-ignore="push" id="back">
+            返回
+            </a>
+            <a class="tab-item money" href="#">
+            ￥<span id="money">0</span>
+            </a>
+            <a class="tab-item checkout" href="#" id="submit">
+            下单
+            </a>
+        </nav>
+        <div class="content main-wraper" id="index-view">
+            <div class="banner"></div>
+            <!-- <div class="section-title">老样子</div> -->
+            <div class="main">
+                <div class="sidebar">
+                    <ul class="table-view">
+                        <li class="table-view-cell media active" id="familiar">
+                            <a data-category="#familiar">
+                            <div class="media-body">
+                                老样子
+                                <p>Familiar</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li class="table-view-cell media">
+                            <a data-category="#coffee" >
+                            <div class="media-body">
+                                现磨咖啡
+                                <p>Fresh Coffee</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li class="table-view-cell media">
+                            <a  data-category="#tea">
+                            <div class="media-body">
+                                茶
+                                <p>Tea</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li class="table-view-cell media">
+                            <a  data-category="#choclate">
+                            <div class="media-body">
+                                巧克力
+                                <p>Choclate</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li class="table-view-cell media">
+                            <a data-category="#milk">
+                            <div class="media-body">
+                                牛奶
+                                <p>Milk</p>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <ul class="table-view">
+                        <li class="table-view-divider" id="familiar">老样子 Familiar</li>
+                        <li class="table-view-cell media" data-id="0">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove">一</button>
+                                    <button class="btn price" data-type="big"  data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="1">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big"  data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small"  data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="2">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">柠檬红茶</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-divider" id="coffee">现磨咖啡 Fresh Coffee</li>
+                        <li class="table-view-cell media" data-id="3">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="4">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="5">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">柠檬红茶</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-divider" id="tea">茶 Tea</li>
+                        <li class="table-view-cell media" data-id="6">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="7">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="8">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">柠檬红茶</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-divider" id="choclate">巧克力 Choclate</li>
+                        <li class="table-view-cell media" data-id="9">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="10">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="11">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">柠檬红茶</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-divider" id="milk">牛奶 Milk</li>
+                        <li class="table-view-cell media" data-id="12">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="13">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="14">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">柠檬红茶</span>
+                                    <div class="order">
+                                        <span class="order-count small">小<span>0</span></span>
+                                        <span class="order-count middle">中<span>0</span></span>
+                                        <span class="order-count big">大<span >0</span></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> 一</button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content main-wraper" id="checkout-view">
+            <div class="section-title">清单</div>
+            <div class="bill-list">
+                <table id="bill-list">
+                    <!-- <tr class="item-row">
+                        <td>新鲜调制咖啡（热）</td>
+                        <td>小 <span class="money">2</span> 中 <span class="money">4</span> 大 <span class="money">3</span> </td>
+                        <td><span class="money">￥60</span></td>
+                    </tr>
+                    <tr class="item-row">
+                        <td>新鲜调制咖啡（热）</td>
+                        <td>小 <span class="money">2</span> 中 <span class="money">4</span> 大 <span class="money">3</span> </td>
+                        <td><span class="money">￥60</span></td>
+                    </tr>
+                    <tr class="item-row">
+                        <td>新鲜调制咖啡（热）</td>
+                        <td>小 <span class="money">2</span> 中 <span class="money">4</span> 大 <span class="money">3</span> </td>
+                        <td><span class="money">￥60</span></td>
+                    </tr> -->
+                    <tr class="money-row">
+                        <td colspan="2" style="text-align:left">应付</td>
+                        <td class="bill-sum"><span class="money" id="bill-sum">￥60</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section-title">收货信息</div>
+            <form class="input-group" id="user-form">
+                <div class="input-row">
+                    <label>联系人</label>
+                    <input type="text" name="username" placeholder="请输入联系人">
+                </div>
+                <div class="input-row">
+                    <label>手机号</label>
+                    <input type="tel" name="phone" placeholder="请输入手机号">
+                </div>
+                <div class="input-row">
+                    <label>所在地</label>
+                    <select name="building" id="">
+                        <option value="0">建外SOHO东区</option>
+                        <option value="1">建外SOHO东区2</option>
+                        <option value="2">建外SOHO东区3</option>
+                    </select>
+                    <select name="floor" id="">
+                        <option value="0">一号楼</option>
+                        <option value="1">一号楼2</option>
+                        <option value="2">一号楼3</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <label>详细地址</label>
+                    <input type="text" name="addr" placeholder="请输入楼层，房间号等详细地址">
+                </div>
+                <div class="input-row">
+                    <label>备注</label>
+                    <input type="text" name="note" placeholder="请留言备注">
+                </div>
+            </form>
+        </div>
+        <script src="lib/zepto.min.js"></script>
+        <script src="lib/ratchet/js/ratchet.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

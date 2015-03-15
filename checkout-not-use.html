@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>下午茶</title>
+        <!-- Sets initial viewport load and disables zooming  -->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Set a shorter title for iOS6 devices when saved to home screen -->
+        <meta name="apple-mobile-web-app-title" content="下午茶">
+        <!-- Include the compiled Ratchet CSS -->
+        <link href="lib/ratchet/css/ratchet.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="bar bar-tab">
+            <a class="tab-item back" href="index.html" data-transition="slide-out">
+            返回
+            </a>
+            <a class="tab-item money" href="#">
+            ￥<span id="money">0</span>
+            </a>
+            <a class="tab-item checkout" href="#" id="submit">
+            下单
+            </a>
+        </nav>
+        <div class="content">
+            <form class="input-group">
+                <div class="input-row">
+                    <label>Full name</label>
+                    <input type="text" placeholder="Mister Ratchet">
+                </div>
+                <div class="input-row">
+                    <label>Email</label>
+                    <input type="email" placeholder="ratchetframework@gmail.com">
+                </div>
+                <div class="input-row">
+                    <label>Username</label>
+                    <input type="text" placeholder="goRatchet">
+                </div>
+            </form>
+        </div>
+        <script src="lib/zepto.min.js"></script>
+        <script src="lib/ratchet/js/ratchet.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
