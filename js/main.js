@@ -7,12 +7,11 @@ var order = {
 var fromSideClick = false;
 var userData;
 
-
 $(function() {
     init();
 
     $('#index-view').scroll(sticky_relocate);
-    sticky_relocate();
+    // sticky_relocate();
 
 });
 
@@ -52,8 +51,11 @@ function sticky_relocate() {
             $('.sidebar li').removeClass("active");
             currLink.parents('li').addClass("active");
         } else {
-            currLink.parents('li').removeClass("active");
+            if ($(this).parent().find('.media-body').html() != $('.sidebar li').first().find('.media-body').html()) {
+                currLink.parents('li').removeClass("active");
+            }
         }
+
     });
 }
 
