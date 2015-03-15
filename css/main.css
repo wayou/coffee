@@ -39,6 +39,7 @@ body {
 }
 .btn{
     border-radius: 0;
+    border: none;
 }
 .btn.price {
     color: #fff;
@@ -157,4 +158,18 @@ body {
 
 #west,#east{
     display: none;
+}
+
+button.btn.price:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 10px solid white;
+  border-right: 10px solid #EB712F;
+  width: 0;
+}
+
+.list li.table-view-cell.media:nth-child(odd) button.btn.price:before{
+  border-top: 10px solid #FAF7F4;
 }
