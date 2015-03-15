@@ -4,17 +4,77 @@ var order = {
     data: []
 };
 
+var fromSideClick = false;
+
 $(function() {
     init();
+
+    $('#index-view').scroll(sticky_relocate);
+    sticky_relocate();
+
 });
+
+function sticky_relocate() {
+
+    //如果是点击左侧菜单，则不对滚动事件做响应
+    if (fromSideClick) return;
+
+    var window_top = $('#index-view').scrollTop();
+    var div_top = $('.sidebar').offset().top;
+    // if (window_top > div_top) {
+    //     if (!$('.sidebar').hasClass('stick')) {
+    //         $('.sidebar').addClass('stick');
+    //     }
+    // } else {
+    //     $('.sidebar').removeClass('stick');
+    // }
+    if (window_top >= 150) {
+        if (!$('.sidebar').hasClass('stick')) {
+            $('.sidebar').addClass('stick');
+        }
+    } else {
+        $('.sidebar').removeClass('stick');
+    }
+
+    var scrollPos = $('#index-view').scrollTop();
+    $('.sidebar a').each(function() {
+        var currLink = $(this);
+        var refElement = $(currLink.data("category"));
+        // if (refElement.position().top <= scrollPos) {
+        //     $('.sidebar li').removeClass("active");
+        //     currLink.parents('li').addClass("active");
+        // } else {
+        //     currLink.parents('li').removeClass("active");
+        // }
+        if (refElement.position().top <= 30) {
+            $('.sidebar li').removeClass("active");
+            currLink.parents('li').addClass("active");
+        } else {
+            currLink.parents('li').removeClass("active");
+        }
+    });
+}
 
 function init() {
     //侧边菜单
     $('.sidebar li').on('click', function() {
+        fromSideClick = true;
         $(this).addClass('active').siblings().removeClass('active');
         //跳到相应分类
         window.location.hash = '';
         window.location.hash = $(this).find('a').data('category');
+        setTimeout(function() {
+            var window_top = $('#index-view').scrollTop();
+            var div_top = $('.sidebar').offset().top;
+            if (window_top >= 150) {
+                if (!$('.sidebar').hasClass('stick')) {
+                    $('.sidebar').addClass('stick');
+                }
+            } else {
+                $('.sidebar').removeClass('stick');
+            }
+            fromSideClick = false;
+        });
     });
 
     //删除
@@ -113,7 +173,7 @@ function init() {
 
     //选择完毕
     $('#checkout').on('click', function() {
-        $('#index-navbar,#index-view').hide();
+        $('#index-navbar,#index-view,.sidebar').hide();
         $('#checkout-navbar,#checkout-view').show();
 
         //展示清单
@@ -132,7 +192,7 @@ function init() {
 
     //返回
     $('#back').on('click', function() {
-        $('#index-navbar,#index-view').show();
+        $('#index-navbar,#index-view,.sidebar').show();
         $('#checkout-navbar,#checkout-view').hide();
     });
 
@@ -145,7 +205,7 @@ function init() {
         // $.post('url',JSON.stringify(data), function() {
         //     alert('下单成功');
         // });
-        $.post('url',data, function() {
+        $.post('url', data, function() {
             alert('下单成功');
         });
     });

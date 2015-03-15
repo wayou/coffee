@@ -17,7 +17,9 @@ body {
 .sidebar {
     width: 100px;
     float: left;
-    margin-top: 34px;
+    margin-top: 150px;
+    position: fixed;
+    z-index: 2;
 }
 .sidebar li {
     padding: 10px;
@@ -140,3 +142,6 @@ body {
    border-bottom: 1px solid #F0E8DE;
 }
 
+.sidebar.stick {
+    top: -130px;
+}
