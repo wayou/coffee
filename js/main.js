@@ -5,6 +5,8 @@ var order = {
 };
 
 var fromSideClick = false;
+var userData;
+
 
 $(function() {
     init();
@@ -208,17 +210,19 @@ function init() {
 
         $('#money2').html(order.totalBill);
 
-        //显示正确的下拉框
-        if ($('#building').val() == '建外SOHO东区') {
-            $('#west').hide();
-            $('#east').show();
+        //回填表单和下拉框
+        if (userData) {
+            fillForm(userData);
         } else {
-            $('#east').hide();
-            $('#west').show();
+            $.get('url', {
+                userId: 1
+            }, function(res) {
+                userData = res;
+                fillForm(res);
+            });
         }
 
         $('#building').change(function() {
-            console.log($(this).val());
             if ($(this).val() == '建外SOHO东区') {
                 $('#west').hide();
                 $('#east').show();
@@ -247,6 +251,24 @@ function init() {
         });
     });
 
+}
+
+function fillForm(data) {
+    $('#username').val(userData.username);
+    $('#phone').val(userData.phone);
+    $('#addr').val(userData.addr);
+    $('#note').val(userData.note);
+    $('#building').val(userData.building);
+    //显示正确的下拉框
+    if ($('#building').val() == '建外SOHO东区') {
+        $('#east').show();
+        $('#east').val(userData.floor);
+        $('#west').hide();
+    } else {
+        $('#east').hide();
+        $('#west').val(userData.floor);
+        $('#west').show();
+    }
 }
 
 function getIndexById(id) {
