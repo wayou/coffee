@@ -207,6 +207,26 @@ function init() {
 
         $('#money2').html(order.totalBill);
 
+        //显示正确的下拉框
+        if ($('#building').val() == '建外SOHO东区') {
+            $('#west').hide();
+            $('#east').show();
+        } else {
+            $('#east').hide();
+            $('#west').show();
+        }
+
+        $('#building').change(function() {
+            console.log($(this).val());
+            if ($(this).val() == '建外SOHO东区') {
+                $('#west').hide();
+                $('#east').show();
+            } else {
+                $('#east').hide();
+                $('#west').show();
+            }
+        });
+
     });
 
     //返回

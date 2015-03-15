@@ -145,3 +145,7 @@ body {
 .sidebar.stick {
     top: -130px;
 }
+
+#west,#east{
+    display: none;
+}
