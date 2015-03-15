@@ -216,6 +216,15 @@ function init() {
         if (userData) {
             fillForm(userData);
         } else {
+            if ($('#building').val() == '建外SOHO东区') {
+                $('#east').show();
+                $('#east').val(userData.floor);
+                $('#west').hide();
+            } else {
+                $('#east').hide();
+                $('#west').val(userData.floor);
+                $('#west').show();
+            }
             $.get('url', {
                 userId: 1
             }, function(res) {
