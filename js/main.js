@@ -223,10 +223,10 @@ function init() {
                 $('#east').removeAttr('disabled');
                 // $('#east').val(userData.floor);
                 $('#west').hide();
-                $('#west').attr('disabled','disabled');
+                $('#west').attr('disabled', 'disabled');
             } else {
                 $('#east').hide();
-                $('#east').attr('disabled','disabled');
+                $('#east').attr('disabled', 'disabled');
                 // $('#west').val(userData.floor);
                 $('#west').show();
                 $('#west').removeAttr('disabled');
@@ -243,15 +243,22 @@ function init() {
             console.log($(this).val());
             if ($(this).val() == '建外SOHO东区') {
                 $('#west').hide();
-                $('#west').attr('disabled','disabled');
+                $('#west').attr('disabled', 'disabled');
                 $('#east').show();
                 $('#east').removeAttr('disabled');
             } else {
                 $('#east').hide();
-                $('#east').attr('disabled','disabled');
+                $('#east').attr('disabled', 'disabled');
                 $('#west').removeAttr('disabled');
                 $('#west').show();
             }
+        });
+
+        //输入框获得焦点时隐藏下面的bar，因为会遮挡用户输入
+        $('form input').on('focus', function() {
+            $('#checkout-navbar').hide();
+        }).on('blur', function() {
+            $('#checkout-navbar').show();
         });
 
     });
