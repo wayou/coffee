@@ -17,7 +17,7 @@ body {
 .sidebar {
     width: 100px;
     float: left;
-    margin-top: 150px;
+    margin-top: 184px;
     position: fixed;
     z-index: 2;
 }
