@@ -220,12 +220,16 @@ function init() {
         } else {
             if ($('#building').val() == '建外SOHO东区') {
                 $('#east').show();
+                $('#east').removeAttr('disabled');
                 $('#east').val(userData.floor);
                 $('#west').hide();
+                $('#west').attr('disabled','disabled');
             } else {
                 $('#east').hide();
+                $('#east').attr('disabled','disabled');
                 $('#west').val(userData.floor);
                 $('#west').show();
+                $('#west').removeAttr('disabled');
             }
             $.get('url', {
                 userId: 1
@@ -238,10 +242,14 @@ function init() {
         $('#building').change(function() {
             if ($(this).val() == '建外SOHO东区') {
                 $('#west').hide();
+                $('#west').attr('disabled','disabled');
                 $('#east').show();
+                $('#east').removeAttr('disabled');
             } else {
                 $('#east').hide();
-                $('#west').show();
+                $('#east').attr('disabled','disabled');
+                $('#east').removeAttr('disabled');
+                $('#east').show();
             }
         });
 
