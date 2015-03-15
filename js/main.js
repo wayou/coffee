@@ -63,16 +63,17 @@ function init() {
         //跳到相应分类
         window.location.hash = '';
         window.location.hash = $(this).find('a').data('category');
+
         setTimeout(function() {
-            var window_top = $('#index-view').scrollTop();
-            var div_top = $('.sidebar').offset().top;
-            if (window_top >= 150) {
-                if (!$('.sidebar').hasClass('stick')) {
-                    $('.sidebar').addClass('stick');
-                }
-            } else {
-                $('.sidebar').removeClass('stick');
-            }
+            // var window_top = $('#index-view').scrollTop();
+            // var div_top = $('.sidebar').offset().top;
+            // if (window_top >= 150) {
+            //     if (!$('.sidebar').hasClass('stick')) {
+            //         $('.sidebar').addClass('stick');
+            //     }
+            // } else {
+            //     $('.sidebar').removeClass('stick');
+            // }
             fromSideClick = false;
         });
     });
