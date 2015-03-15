@@ -81,6 +81,8 @@ function init() {
             fromSideClick = false;
         });
     });
+    //默认高亮第一个
+    $('.sidebar li').first().addClass('active');
 
     //删除
     $('.remove').on('click', function() {
