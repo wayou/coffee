@@ -128,7 +128,7 @@ body {
 }
 
 .input-row select {
-  width: 30%;
+  width: 35%;
   padding-left: 0;
   margin-bottom: 0;
   border-bottom: 0;
@@ -172,4 +172,12 @@ button.btn.price:before {
 
 .list li.table-view-cell.media:nth-child(odd) button.btn.price:before{
   border-top: 10px solid #FAF7F4;
+}
+
+.input-row label{
+  width:25%;
+}
+
+.input-row input{
+  width: 75%;
 }

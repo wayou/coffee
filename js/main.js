@@ -221,13 +221,13 @@ function init() {
             if ($('#building').val() == '建外SOHO东区') {
                 $('#east').show();
                 $('#east').removeAttr('disabled');
-                $('#east').val(userData.floor);
+                // $('#east').val(userData.floor);
                 $('#west').hide();
                 $('#west').attr('disabled','disabled');
             } else {
                 $('#east').hide();
                 $('#east').attr('disabled','disabled');
-                $('#west').val(userData.floor);
+                // $('#west').val(userData.floor);
                 $('#west').show();
                 $('#west').removeAttr('disabled');
             }
@@ -240,6 +240,7 @@ function init() {
         }
 
         $('#building').change(function() {
+            console.log($(this).val());
             if ($(this).val() == '建外SOHO东区') {
                 $('#west').hide();
                 $('#west').attr('disabled','disabled');
@@ -248,8 +249,8 @@ function init() {
             } else {
                 $('#east').hide();
                 $('#east').attr('disabled','disabled');
-                $('#east').removeAttr('disabled');
-                $('#east').show();
+                $('#west').removeAttr('disabled');
+                $('#west').show();
             }
         });
 
