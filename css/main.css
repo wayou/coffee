@@ -135,6 +135,7 @@ body {
   background-color: #fff;
   height: 100%;
   border-radius: 0;
+  padding-right: 20px;
 }
 
 .select-wrapper{
