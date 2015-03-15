@@ -131,11 +131,20 @@ body {
   padding-left: 0;
   margin-bottom: 0;
   border-bottom: 0;
-  /*border: none;*/
   background-color: #fff;
   height: 100%;
   border-radius: 0;
 }
+
+.select-wrapper{
+    display: inline;
+    position: relative;
+}
+.select-wrapper img{
+    position: absolute;
+    right: 0;
+}
+
 
 .table-view-divider{
    background-color: #FBF7F4;

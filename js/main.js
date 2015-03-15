@@ -241,9 +241,6 @@ function init() {
             order: order,
             user: $('#user-form').serializeArray()
         };
-        // $.post('url',JSON.stringify(data), function() {
-        //     alert('下单成功');
-        // });
         $.post('url', data, function() {
             alert('下单成功');
         });
