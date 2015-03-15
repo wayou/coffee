@@ -240,13 +240,3 @@ function getIndexById(id) {
     });
     return index;
 }
-
-function getCountByType(sinleOrder, type) {
-    var index = -1;
-    order.data.forEach(function(v, i) {
-        if (v.id == id) {
-            index = i;
-        }
-    });
-    return index;
-}
