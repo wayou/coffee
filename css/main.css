@@ -5,6 +5,19 @@ body {
 #checkout-navbar,#checkout-view{
     display: none;
 }
+#checkout-navbar {
+  text-align: center;
+  height: 51px;
+  padding: 0;
+}
+
+#checkout-navbar a{
+  width: 32%;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
+}
 
 .main-wraper, .sidebar>.table-view {
     background-color: #EEE1D7;

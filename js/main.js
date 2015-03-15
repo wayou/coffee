@@ -255,11 +255,11 @@ function init() {
         });
 
         //输入框获得焦点时隐藏下面的bar，因为会遮挡用户输入
-        $('form input').on('focus', function() {
-            $('#checkout-navbar').hide();
-        }).on('blur', function() {
-            $('#checkout-navbar').show();
-        });
+        // $('form input').on('focus', function() {
+        //     $('#user-form').css('margin-bottom','500px');
+        // }).on('blur', function() {
+        //     $('#user-form').css('margin-bottom','0px');
+        // });
 
     });
 
