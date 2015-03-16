@@ -148,6 +148,7 @@ body {
   height: 100%;
   border-radius: 0;
   padding-right: 20px;
+  background: transparent;
 }
 
 .select-wrapper{
@@ -157,6 +158,7 @@ body {
 .select-wrapper img{
     position: absolute;
     right: 0;
+    z-index: -1;
 }
 
 

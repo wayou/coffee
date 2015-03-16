@@ -13,6 +13,11 @@ $(function() {
     $('#index-view').scroll(sticky_relocate);
     sticky_relocate();
 
+    // //点击下拉框的图片也触发下拉框打开
+    // $('.select-wrapper img').on('click',function(){
+    //     $(this).parent().find('select').trigger('click');
+    // });
+
 });
 
 function sticky_relocate() {
@@ -253,13 +258,6 @@ function init() {
                 $('#west').show();
             }
         });
-
-        //输入框获得焦点时隐藏下面的bar，因为会遮挡用户输入
-        // $('form input').on('focus', function() {
-        //     $('#user-form').css('margin-bottom','500px');
-        // }).on('blur', function() {
-        //     $('#user-form').css('margin-bottom','0px');
-        // });
 
     });
 
