@@ -13,11 +13,6 @@ $(function() {
     $('#index-view').scroll(sticky_relocate);
     sticky_relocate();
 
-    // //点击下拉框的图片也触发下拉框打开
-    // $('.select-wrapper img').on('click',function(){
-    //     $(this).parent().find('select').trigger('click');
-    // });
-
 });
 
 function sticky_relocate() {
