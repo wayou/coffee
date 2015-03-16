@@ -11,7 +11,7 @@ $(function() {
     init();
 
     $('#index-view').scroll(sticky_relocate);
-    // sticky_relocate();
+    sticky_relocate();
 
 });
 
