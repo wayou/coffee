@@ -195,7 +195,7 @@ button.btn.price:nth-of-type(3):before {
 }
 
 .input-row select {
-  width: 33%;
+  width: 34%;
   padding-left: 0;
   margin-bottom: 0;
   border-bottom: 0;
@@ -215,7 +215,7 @@ button.btn.price:nth-of-type(3):before {
     right: 1px;
     z-index: -1;
     /*width: 15px;*/
-    /*top:7px;*/
+    top:-3px;
 }
 
 
