@@ -206,6 +206,8 @@ button.btn.price:nth-of-type(3):before {
   border-radius: 0;
   padding-right: 20px;
   background: transparent;
+  -webkit-appearance: none;
+   box-shadow: none !important; 
 }
 
 .select-wrapper{
@@ -282,4 +284,8 @@ button.btn.price:nth-of-type(3):before {
 
 #floor{
   right: 0;
+}
+
+#building{
+  border-right: 0;
 }
