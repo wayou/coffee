@@ -2,6 +2,7 @@ body {
     font-family: 'Microsoft Yahei';
     color: #50352D;
     margin:0;
+    padding: 0;
     position: static;
 }
 
@@ -16,6 +17,7 @@ ul{
   text-align: center;
   height: 51px;
   padding: 0;
+  position: static;
 }
 
 #checkout-navbar a{
@@ -55,6 +57,8 @@ ul{
 .table-view-cell.media.active {
     color: #EC7D42;
     background-color: #fff;
+    border-left: 5px solid #B24318;
+    padding: 15px 10px;
 }
 .btn{
     border-radius: 0;
@@ -63,10 +67,49 @@ ul{
 .btn.price {
     color: #fff;
     float: right;
-    background-color: #EB712F;
+    background-color: #B24318;
     font-size: 1.1em;
     padding:8px;
 }
+
+button.btn.price:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 10px solid white;
+  border-right: 10px solid #B24318;
+  width: 0;
+}
+
+
+.btn.price:nth-of-type(4) {
+    background-color: #F4A759;
+}
+button.btn.price:nth-of-type(4):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 10px solid white;
+  border-right: 10px solid #F4A759;
+  width: 0;
+}
+
+.btn.price:nth-of-type(3) {
+    background-color: #EB712E;
+}
+button.btn.price:nth-of-type(3):before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 10px solid white;
+  border-right: 10px solid #EB712E;
+  width: 0;
+}
+
+
 .btn.remove {
     margin-top: 7px;
     color: #fff;
@@ -107,6 +150,7 @@ ul{
 .tab-item.checkout{
     background-color:#6BBF11;
     color:#fff;
+    float: right;
 }
 .bar.bar-tab a{
     font-weight: bold;
@@ -164,8 +208,10 @@ ul{
 }
 .select-wrapper img{
     position: absolute;
-    right: 0;
+    right: 1px;
     z-index: -1;
+    /*width: 15px;*/
+    /*top:7px;*/
 }
 
 
@@ -183,15 +229,6 @@ ul{
     display: none;
 }
 
-button.btn.price:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-top: 10px solid white;
-  border-right: 10px solid #EB712F;
-  width: 0;
-}
 
 .list li.table-view-cell.media:nth-child(odd) button.btn.price:before{
   border-top: 10px solid #FAF7F4;
@@ -208,8 +245,31 @@ button.btn.price:before {
 #index-navbar{
   position: fixed;
   bottom: 0;
+  text-align: center;
+  height: 50px;
+  padding: 0;
+  border-bottom: 0;
+}
+#index-navbar a{
+    width: 32%;
+  height: 50px;
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
 }
 
 .content{
   position: static;
+}
+
+.table-view-cell{
+  border-bottom: 0;
+}
+
+.table-view{
+  border: 0!important;
+}
+
+#index-view .table-view{
+  margin-bottom: 50px;
 }

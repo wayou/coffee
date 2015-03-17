@@ -6,6 +6,7 @@ var order = {
 
 var fromSideClick = false;
 var userData;
+var locationData;
 
 $(function() {
     init();
@@ -218,16 +219,47 @@ function init() {
                 $('#west').show();
                 $('#west').removeAttr('disabled');
             }
-            $.get('url', {
-                userId: 1
-            }, function(res) {
-                userData = res;
-                fillForm(res);
+
+            //获取用户信息
+            //----------------更改这里------------------
+            // $.get('url',{wechat_code:'xxxx'},function(res){
+            //     userData=res||{};
+            //     fillForm(res);
+            // });
+        }
+
+        if (!locationData) {
+            //获取楼层信息
+            //----------------更改这里,请楼层信息生成到页面------------------
+            $.get('url', function(res) {
+                locationData = res || {};
+
+                var buildingOptions = '';
+                res.forEach(function(v, i) {
+                    buildingOptions += '<option value="' + Object.keys(v)[0] + '">'
+                    Object.keys(v)[0] + '</option>';
+                });
+
+                //先清空
+                $('#building').html('');
+                $('#building').append(buildingOptions);
+
+                //显示第一个楼的楼层
+                var floorOptions = '';
+                res[0][Object.keys(res[0])[0]].forEach(function(v, i) {
+                    floorOptions += '<option value="' + v + '">' + v + '</option>';
+                });
+
+                //先清空
+                $('#floor').html('');
+                $('#floor').append(floorOptions);
+
             });
         }
 
         $('#building').change(function() {
-            console.log($(this).val());
+
+            //待删除
             if ($(this).val() == '建外SOHO东区') {
                 $('#west').hide();
                 $('#west').attr('disabled', 'disabled');
@@ -239,6 +271,26 @@ function init() {
                 $('#west').removeAttr('disabled');
                 $('#west').show();
             }
+
+            //根据第一个的选择来设置第二个下拉框
+            var selectedBuilding = '';
+            locationData.forEach(function(v, i) {
+                if (Object.keys(v)[0] == $(this).val()) {
+                    selectedBuilding = v;
+                }
+            });
+
+            selectedBuilding[$(this).val()].forEach(function(v, i) {
+                var floorOptions = '';
+                res[0][Object.keys(res[0])[0]].forEach(function(v, i) {
+                    floorOptions += '<option value="' + v + '">' + v + '</option>';
+                });
+
+                //先清空
+                $('#floor').html('');
+                $('#floor').append(floorOptions);
+            });
+
         });
 
     });
@@ -263,6 +315,7 @@ function init() {
 }
 
 function fillForm(data) {
+    if (!data) return;
     $('#username').val(userData.username);
     $('#phone').val(userData.phone);
     $('#addr').val(userData.addr);
