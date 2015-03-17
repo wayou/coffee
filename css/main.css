@@ -115,7 +115,9 @@ button.btn.price:nth-of-type(3):before {
 
 
 .btn.remove {
-    margin-top: 7px;
+    margin-top: 3px;
+    padding: 0px;
+    font-size: 1.5em;
     color: #fff;
     background-color: #F9CD96;
     font-weight: bolder;
@@ -276,4 +278,8 @@ button.btn.price:nth-of-type(3):before {
 
 #index-view .table-view{
   margin-bottom: 50px;
+}
+
+#floor{
+  right: 0;
 }
