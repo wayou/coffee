@@ -1,14 +1,7 @@
 body {
     font-family: 'Microsoft Yahei';
     color: #50352D;
-    margin:0;
-    position: static;
 }
-
-ul{
-  list-style: none;
-}
-
 #checkout-navbar,#checkout-view{
     display: none;
 }
@@ -203,13 +196,4 @@ button.btn.price:before {
 
 .input-row input{
   width: 70%;
-}
-
-#index-navbar{
-  position: fixed;
-  bottom: 0;
-}
-
-.content{
-  position: static;
 }
