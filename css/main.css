@@ -60,6 +60,10 @@ ul{
     border-left: 5px solid #B24318;
     padding: 15px 10px;
 }
+.table-view-cell.media {
+    border-left: 5px solid #EEE1D7;
+    padding: 15px 10px;
+}
 .btn{
     border-radius: 0;
     border: none;
@@ -113,7 +117,7 @@ button.btn.price:nth-of-type(3):before {
 .btn.remove {
     margin-top: 7px;
     color: #fff;
-    background-color: #B24318;
+    background-color: #F9CD96;
     font-weight: bolder;
     display: none;
 }
