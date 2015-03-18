@@ -215,11 +215,16 @@ button.btn.price:nth-of-type(3):before {
     position: relative;
 }
 .select-wrapper img{
-    position: absolute;
+    /*position: absolute;
     right: 1px;
     z-index: -1;
-    /*width: 15px;*/
     top:-3px;
+*/
+    position: absolute;
+    right: 3px;
+    z-index: -1;
+    top: 5px;
+    width: 15px;
 }
 
 
