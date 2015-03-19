@@ -55,6 +55,8 @@ function sticky_relocate() {
 }
 
 function init() {
+
+    $('#removeAll').hide();
     //侧边菜单
     $('.sidebar li').on('click', function() {
 
