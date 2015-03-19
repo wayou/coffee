@@ -107,6 +107,18 @@ function init() {
 
     });
 
+    //删除全部
+    $('#removeAll').on('click', function() {
+        order.data = [];
+        order.totalCount = 0;
+        order.totalBill = 0;
+
+        $('.list-op .btn.remove').hide();
+        $('.order-count').html('').hide();
+        $('#count').html(0);
+        $('#money').html(0);
+    });
+
     //添加
     $('.price').on('click', function() {
         var $container = $(this).parents('.table-view-cell.media'),
@@ -170,6 +182,9 @@ function init() {
 
         //显示删除按钮
         $(this).parents('.list-op').find('.btn.remove').show();
+
+        //显示总删除按钮
+        $('#removeAll').show();
 
     });
 
@@ -311,7 +326,6 @@ function init() {
             alert('下单成功');
         });
     });
-
 }
 
 function fillForm(data) {
@@ -341,4 +355,49 @@ function getIndexById(id) {
         }
     });
     return index;
+}
+
+//初始化选中某个商品
+//@param id 商品id
+//@param detail 选中详情,为数组，包含这种id的商品下面每种类型选中的数量
+//示例 [{type:'小',count:1,price:12},{type:'大',count:2,price:12}]  会选中1个小分和2个大分
+function preSelect(id, name, detail) {
+    $('.list .table-view-cell.media').each(function(i, ele) {
+        if ($(this).data('id') == id) {
+
+            $container = $(this);
+
+            detail.forEach(function(v) {
+                order.totalBill += v.price * v.count;
+                order.totalCount += v.count;
+            });
+
+            order.data.push({
+                id: id,
+                name: name,
+                counts: detail
+            });
+
+            //显示选择的商品
+            var result = '';
+            detail.forEach(function(v, i) {
+                if (v.count !== 0) {
+                    result += v.type + '<span>' + v.count + '</span>';
+                }
+            });
+            $container.find('.order-count').html(result).show();
+
+            //显示删除按钮
+            $container.find('.btn.remove').show();
+
+        }
+    });
+
+    //显示到页面
+    $('#count').html(order.totalCount);
+    $('#money').html(order.totalBill);
+
+    //显示总删除按钮
+    $('#removeAll').show();
+
 }

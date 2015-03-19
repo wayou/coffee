@@ -294,3 +294,11 @@ button.btn.price:nth-of-type(3):before {
 #building{
   border-right: 0;
 }
+
+#removeAll{
+  display: inline-block;
+  top: -5px;
+}
+#removeAll .icon{
+  top:0;
+}

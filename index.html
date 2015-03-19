@@ -16,7 +16,8 @@
     </head>
     <body>
         <nav class="bar" id="index-navbar">
-            <a class="tab-item total-count" href="#">
+            <a class="tab-item total-count" href="javascript:;">
+            <button class="btn remove" id="removeAll"> <span class="icon icon-close"></span></button>
             <span id="count">0</span> 份
             </a>
             <a class="tab-item money" href="#">
@@ -29,30 +30,30 @@
         <div class="content main-wraper" id="index-view">
             <div class="banner"></div>
             <div class="sidebar">
-                    <ul class="table-view">
-                        <li class="table-view-cell media">
-                            <a data-category="#老样子">
-                            <div class="media-body">
-                                老样子
-                            </div>
-                            </a>
-                        </li>
-                        <li class="table-view-cell media">
-                            <a  data-category="#tea">
-                            <div class="media-body">
-                                茶
-                            </div>
-                            </a>
-                        </li>
-                        <li class="table-view-cell media">
-                            <a  data-category="#choclate">
-                            <div class="media-body">
-                                巧克力
-                            </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="table-view">
+                    <li class="table-view-cell media">
+                        <a data-category="#老样子">
+                        <div class="media-body">
+                            老样子
+                        </div>
+                        </a>
+                    </li>
+                    <li class="table-view-cell media">
+                        <a  data-category="#tea">
+                        <div class="media-body">
+                            茶
+                        </div>
+                        </a>
+                    </li>
+                    <li class="table-view-cell media">
+                        <a  data-category="#choclate">
+                        <div class="media-body">
+                            巧克力
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="main">
                 <div class="list">
                     <ul class="table-view">
@@ -78,7 +79,7 @@
                                 <div class="list-head">
                                     <span class="good-title">焦糖咖啡冰乐</span>
                                     <div class="order">
-                                       <span class="order-count"></span>
+                                        <span class="order-count"></span>
                                     </div>
                                 </div>
                                 <div class="list-op">
@@ -137,8 +138,136 @@
                                 </div>
                             </div>
                         </li>
-                        
+
                         <li class="table-view-divider" id="choclate">巧克力 </li>
+                        <li class="table-view-cell media" data-id="9">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="10">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="9">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="10">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="9">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="10">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="9">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">新鲜调制咖啡（热）</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="table-view-cell media" data-id="10">
+                            <div class="media-body">
+                                <div class="list-head">
+                                    <span class="good-title">焦糖咖啡冰乐</span>
+                                    <div class="order">
+                                        <span class="order-count "></span>
+                                    </div>
+                                </div>
+                                <div class="list-op">
+                                    <button class="btn remove"> <span class="icon icon-close"></span></button>
+                                    <button class="btn price" data-type="big" data-price="30">￥30</button>
+                                    <button class="btn price" data-type="middle" data-price="20">￥20</button>
+                                    <button class="btn price" data-type="small" data-price="10">￥10</button>
+                                </div>
+                            </div>
+                        </li>
                         <li class="table-view-cell media" data-id="9">
                             <div class="media-body">
                                 <div class="list-head">
@@ -204,9 +333,8 @@
                         </select>
                         <img src="img/select-arrow.png" >
                     </div>
-
                     <div class="select-wrapper">
-                         <select name="floor" id="floor">
+                        <select name="floor" id="floor">
                             <option value="建外SOHO A座">建外SOHO A座</option>
                             <option value="建外SOHO B座">建外SOHO B座</option>
                             <option value="建外SOHO 1号楼">建外SOHO 1号楼</option>
@@ -231,54 +359,53 @@
                         </select>
                         <img src="img/select-arrow.png" >
                     </div>
-
                     <!-- <div class="select-wrapper">
-                         <select name="floor" id="east">
-                            <option value="建外SOHO A座">建外SOHO A座</option>
-                            <option value="建外SOHO B座">建外SOHO B座</option>
-                            <option value="建外SOHO 1号楼">建外SOHO 1号楼</option>
-                            <option value="建外SOHO 2号楼">建外SOHO 2号楼</option>
-                            <option value="建外SOHO 3号楼">建外SOHO 3号楼</option>
-                            <option value="建外SOHO 4号楼">建外SOHO 4号楼</option>
-                            <option value="建外SOHO 5号楼">建外SOHO 5号楼</option>
-                            <option value="建外SOHO 6号楼">建外SOHO 6号楼</option>
-                            <option value="建外SOHO 7号楼">建外SOHO 7号楼</option>
-                            <option value="建外SOHO 8号楼">建外SOHO 8号楼</option>
-                            <option value="建外SOHO 9号楼">建外SOHO 9号楼</option>
-                            <option value="建外SOHO 5号别墅">建外SOHO 5号别墅</option>
-                            <option value="建外SOHO 6号别墅">建外SOHO 6号别墅</option>
-                            <option value="建外SOHO 8号别墅">建外SOHO 8号别墅</option>
-                            <option value="建外SOHO 9号别墅">建外SOHO 9号别墅</option>
-                            <option value="银泰中心A座">银泰中心A座</option>
-                            <option value="银泰中心B座">银泰中心B座</option>
-                            <option value="银泰中心C座">银泰中心C座</option>
-                            <option value="SK大厦">SK大厦</option>
-                            <option value="中环世贸中心C座">中环世贸中心C座</option>
-                            <option value="中环世贸中心D座">中环世贸中心D座</option>
-                        </select>
-                        <img src="img/select-arrow.png" >
-                    </div>
-                    <div class="select-wrapper">
-                          <select name="floor" id="west" disabled="disabled">
-                            <option value="建外SOHO 10号楼">建外SOHO 10号楼</option>
-                            <option value="建外SOHO 11号楼">建外SOHO 11号楼</option>
-                            <option value="建外SOHO 12号楼">建外SOHO 12号楼</option>
-                            <option value="建外SOHO 13号楼">建外SOHO 13号楼</option>
-                            <option value="建外SOHO 14号楼">建外SOHO 14号楼</option>
-                            <option value="建外SOHO 15号楼">建外SOHO 15号楼</option>
-                            <option value="建外SOHO 16号楼">建外SOHO 16号楼</option>
-                            <option value="建外SOHO 17号楼">建外SOHO 17号楼</option>
-                            <option value="建外SOHO 18号楼">建外SOHO 18号楼</option>
-                            <option value="安邦金融中心A座">安邦金融中心A座</option>
-                            <option value="安邦金融中心B座">安邦金融中心B座</option>
-                            <option value="通用国际大厦">通用国际大厦</option>
-                            <option value="IFC国际大厦A座">IFC国际大厦A座</option>
-                            <option value="IFC国际大厦B座">IFC国际大厦B座</option>
-                            <option value="米阳大厦">米阳大厦</option>
-                            <option value="华彬中心">华彬中心</option>
-                            <option value="CBD国际大厦">CBD国际大厦</option>
-                        </select>
-                        <img src="img/select-arrow.png" >
+                                                <select name="floor" id="east">
+                                                        <option value="建外SOHO A座">建外SOHO A座</option>
+                                                        <option value="建外SOHO B座">建外SOHO B座</option>
+                                                        <option value="建外SOHO 1号楼">建外SOHO 1号楼</option>
+                                                        <option value="建外SOHO 2号楼">建外SOHO 2号楼</option>
+                                                        <option value="建外SOHO 3号楼">建外SOHO 3号楼</option>
+                                                        <option value="建外SOHO 4号楼">建外SOHO 4号楼</option>
+                                                        <option value="建外SOHO 5号楼">建外SOHO 5号楼</option>
+                                                        <option value="建外SOHO 6号楼">建外SOHO 6号楼</option>
+                                                        <option value="建外SOHO 7号楼">建外SOHO 7号楼</option>
+                                                        <option value="建外SOHO 8号楼">建外SOHO 8号楼</option>
+                                                        <option value="建外SOHO 9号楼">建外SOHO 9号楼</option>
+                                                        <option value="建外SOHO 5号别墅">建外SOHO 5号别墅</option>
+                                                        <option value="建外SOHO 6号别墅">建外SOHO 6号别墅</option>
+                                                        <option value="建外SOHO 8号别墅">建外SOHO 8号别墅</option>
+                                                        <option value="建外SOHO 9号别墅">建外SOHO 9号别墅</option>
+                                                        <option value="银泰中心A座">银泰中心A座</option>
+                                                        <option value="银泰中心B座">银泰中心B座</option>
+                                                        <option value="银泰中心C座">银泰中心C座</option>
+                                                        <option value="SK大厦">SK大厦</option>
+                                                        <option value="中环世贸中心C座">中环世贸中心C座</option>
+                                                        <option value="中环世贸中心D座">中环世贸中心D座</option>
+                                                </select>
+                                                <img src="img/select-arrow.png" >
+                                        </div>
+                                        <div class="select-wrapper">
+                                                <select name="floor" id="west" disabled="disabled">
+                                                        <option value="建外SOHO 10号楼">建外SOHO 10号楼</option>
+                                                        <option value="建外SOHO 11号楼">建外SOHO 11号楼</option>
+                                                        <option value="建外SOHO 12号楼">建外SOHO 12号楼</option>
+                                                        <option value="建外SOHO 13号楼">建外SOHO 13号楼</option>
+                                                        <option value="建外SOHO 14号楼">建外SOHO 14号楼</option>
+                                                        <option value="建外SOHO 15号楼">建外SOHO 15号楼</option>
+                                                        <option value="建外SOHO 16号楼">建外SOHO 16号楼</option>
+                                                        <option value="建外SOHO 17号楼">建外SOHO 17号楼</option>
+                                                        <option value="建外SOHO 18号楼">建外SOHO 18号楼</option>
+                                                        <option value="安邦金融中心A座">安邦金融中心A座</option>
+                                                        <option value="安邦金融中心B座">安邦金融中心B座</option>
+                                                        <option value="通用国际大厦">通用国际大厦</option>
+                                                        <option value="IFC国际大厦A座">IFC国际大厦A座</option>
+                                                        <option value="IFC国际大厦B座">IFC国际大厦B座</option>
+                                                        <option value="米阳大厦">米阳大厦</option>
+                                                        <option value="华彬中心">华彬中心</option>
+                                                        <option value="CBD国际大厦">CBD国际大厦</option>
+                                                </select>
+                                                <img src="img/select-arrow.png" >
                     </div> -->
                 </div>
                 <div class="input-row">
@@ -291,16 +418,16 @@
                 </div>
             </form>
             <nav class="bar" id="checkout-navbar">
-            <a class="tab-item back" style="float:left;" href="#"  data-ignore="push" id="back">
-            返回
-            </a>
-            <a class="tab-item money" href="#">
-            ￥<span id="money2">0</span>
-            </a>
-            <a class="tab-item checkout" style="float:right;" href="#" id="submit">
-            下单
-            </a>
-        </nav>
+                <a class="tab-item back" style="float:left;" href="#"  data-ignore="push" id="back">
+                返回
+                </a>
+                <a class="tab-item money" href="#">
+                ￥<span id="money2">0</span>
+                </a>
+                <a class="tab-item checkout" style="float:right;" href="#" id="submit">
+                下单
+                </a>
+            </nav>
         </div>
         <script src="lib/jquery.js"></script>
         <!-- <script src="lib/zepto.min.js"></script> -->
