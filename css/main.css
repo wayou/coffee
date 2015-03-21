@@ -39,8 +39,10 @@ ul{
 .sidebar {
     width: 100px;
     padding-top: 33px;
-    position: absolute;
+    /*position: absolute;*/
     z-index: 2;
+    position: fixed;
+    top: 150px;
 }
 .sidebar li {
     padding: 10px;
@@ -235,7 +237,6 @@ button.btn.price:nth-of-type(3):before {
 
 .sidebar.stick {
     top: 0px;
-    position: fixed;
 }
 
 #west,#east{

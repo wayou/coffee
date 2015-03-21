@@ -28,7 +28,7 @@ function sticky_relocate() {
     // } else {
     //     $('.sidebar').removeClass('stick');
     // }
-    if (window_top >= 150) {
+    if (window_top >= 148) {
         if (!$('.sidebar').hasClass('stick')) {
             $('.sidebar').addClass('stick');
         }
@@ -316,6 +316,10 @@ function init() {
     $('#back').on('click', function() {
         $('#index-navbar,#index-view,.sidebar').show();
         $('#checkout-navbar,#checkout-view').hide();
+
+        //修复有的机型返回后左边菜单位置不对
+        $('.sidebar').removeClass('stick');
+
     });
 
     //下单按钮
