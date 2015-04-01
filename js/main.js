@@ -48,6 +48,9 @@ function sticky_relocate() {
         } else {
             if ($(this).parent().find('.media-body').html() != $('.sidebar li').first().find('.media-body').html()) {
                 currLink.parents('li').removeClass("active");
+            }else{
+                //fix 快速到顶部第一个菜单未选中
+                $('.sidebar li').first().addClass("active");
             }
         }
     });
