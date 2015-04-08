@@ -31,9 +31,11 @@ function sticky_relocate() {
     if (window_top >= 148) {
         if (!$('.sidebar').hasClass('stick')) {
             $('.sidebar').addClass('stick');
+            $('.banner').addClass('top');
         }
     } else {
         $('.sidebar').removeClass('stick');
+        $('.banner').removeClass('top');
     }
 
     //如果是点击左侧菜单，则不对滚动事件做响应

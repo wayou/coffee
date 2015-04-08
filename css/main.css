@@ -31,11 +31,25 @@ ul{
 .main-wraper, .sidebar>.table-view {
     background-color: #EEE1D7;
 }
+
+.main{
+  margin-top: 150px;
+}
+
 .banner {
     height: 150px;
     background-size: cover;
     background-image: url(../img/banner.jpg);
+    position: absolute;
+    top:0;
+    width:100%;
+    transition:top .5s;
 }
+
+.top{
+  top:-150px;
+}
+
 .sidebar {
     width: 100px;
     padding-top: 33px;
