@@ -317,3 +317,10 @@ button.btn.price:nth-of-type(3):before {
 #removeAll .icon{
   top:0;
 }
+
+/*fix for iphone 4 and smaller screens*/
+@media (max-width: 320px) {
+  .btn.price{
+    font-size: 0.7em;
+  }
+}
